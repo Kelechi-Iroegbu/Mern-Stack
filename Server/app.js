@@ -20,4 +20,4 @@ app.get('/',(req,res)=>res.send(
 ))
 app.use('/api/auth',authRouter)
 app.use('/api/user',userRouter)
-app.listen(4000, ()=> console.log(`Server connected on :${port}`))
+app.listen(4000)
