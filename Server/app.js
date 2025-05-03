@@ -11,7 +11,7 @@ const port = process.env.PORT || 4000
 connectDB();
 
 
-const allowedOrigins = ['http://localhost:51','https://mern-stack-sane-travels-frontend.onrender.com']
+const allowedOrigins = ['http://localhost:5173','https://mern-stack-sane-travels-frontend.onrender.com']
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({origin: allowedOrigins,credentials:true}))
