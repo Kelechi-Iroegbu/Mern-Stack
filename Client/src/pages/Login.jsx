@@ -33,6 +33,7 @@ const handleLogin = async ()=>{
   }
   useEffect(()=>{
     if(isregSuccess){
+      getUserData()
       toast.success("user login success")
       navigate("/")
     }
