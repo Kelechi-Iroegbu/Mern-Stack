@@ -15,7 +15,7 @@ export default function Login() {
     const navigate = useNavigate();
     const[formValue,setFormValue] = useState(initialState);
     const {email,password,name} = formValue;
-    const [state,setState] = useState('false');
+    const [state,setState] = useState('Sign Up');
     const [RegUser,{data:regdata,isSuccess:isregSuccess,error:regError,isError:isregError}] = useRegUserMutation()
  
   
