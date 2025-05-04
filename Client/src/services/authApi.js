@@ -7,10 +7,10 @@ export const authApi = createApi({
         baseUrl:import.meta.env.VITE_BACKEND_URL,
     }),
     endpoints:(builder)=>({
-        loginUser:builder.mutation({
+        RegUser:builder.mutation({
             query : (body)=>{
                 return{
-                    url:"/Login",
+                    url:"/api/auth/register",
                     method:"post",
                     body,
                 }
@@ -18,4 +18,4 @@ export const authApi = createApi({
         })
     })
 })
-export const {useLoginUserMutation}=authApi;
+export const {useRegUserMutation}=authApi;

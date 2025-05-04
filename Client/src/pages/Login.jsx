@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import { assets } from '../assets/assets'
-import{useLoginUserMutation} from '../services/authApi'
+import{useRegUserMutation} from '../services/authApi'
 
 const initialState ={
   fullName:"",
@@ -14,29 +14,29 @@ const initialState ={
 export default function Login() {
     const navigate = useNavigate();
     const[formValue,setFormValue] = useState(initialState);
-    const {email,password} = formValue;
+    const {email,password,name} = formValue;
     const [state,setState] = useState('Sign Up');
-    const [loginUser,{data:loginData,isSuccess:isloginSuccess,isError:isloginError,error:loginError}] = useLoginUserMutation()
-
+    const [RegUser,{data:regdata,isSuccess:isregSuccess,error:regError,isError:isregError}] = useRegUserMutation()
+ 
   
   const handleChange = (e)=>{
     setFormValue({...formValue,initialState:e.target.value})
   }
 
-  const handleLogin = async ()=>{
+const handleLogin = async ()=>{
     if(email && password ){
       await loginUser ({email,password})
+
     }else{
       toast.error("please fill all imput field")
     }
   }
   useEffect(()=>{
-    if(isloginSuccess){
+    if(isregSuccess){
       toast.success("user login success")
       navigate("/")
     }
-  }),[isloginSuccess]
-
+  },[isregSuccess]);
 
 
     return (
@@ -83,4 +83,3 @@ export default function Login() {
       </div>
     )
   }
-  
