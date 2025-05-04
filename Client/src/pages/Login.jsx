@@ -24,18 +24,17 @@ export default function Login() {
   }
 
 const handleLogin = async ()=>{
-    if(email && password & fullname){
+    if(email && password & fullname ){
       await RegUser ({fullName,email,password})
-      if(isregSuccess){
-      getUserData()
-      toast.success("user login success")
-      navigate("/")}
     }else{
       toast.error("please fill all input field")
     }
   }
   useEffect(()=>{
-    isregSuccess(true)
+    if(isregSuccess){
+      toast.success("user login success")
+      navigate("/") 
+    }
   },[isregSuccess]);
 
 
@@ -68,7 +67,7 @@ const handleLogin = async ()=>{
             <p  onClick = {()=>navigate('/reset-password')}className='mb-4 text-indigo-500 cursor-pointer'>Forgot Password?</p>
             <button className='w-full py-2.5 rounded-full bg-gradient-to-r from-indigo-500 to-indigo-900 text-white font-medium'>{state}</button>
           </form>
-          {state== 'Sign Up' ? (
+          {state=== 'Sign Up' ? (
              <p className='text-gray-400 text-center text-xs mt-4'>
              Already have an account?{' '}
              <span onClick={()=>setState('Login')} className='text-blue-400 cursor-pointer underline '>Login here</span>
