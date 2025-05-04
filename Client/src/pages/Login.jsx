@@ -24,8 +24,9 @@ export default function Login() {
   }
 
 const handleLogin = async ()=>{
-    if(email && password ){
+    if(email && password & fullname){
       await RegUser ({fullName,email,password})
+
 
     }else{
       toast.error("please fill all input field")
