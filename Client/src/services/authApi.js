@@ -10,7 +10,7 @@ export const authApi = createApi({
         RegUser:builder.mutation({
             query : (body)=>{
                 return{
-                    url:"/api/auth/register",
+                    url:"/auth/register",
                     method:"post",
                     body,
                 }
