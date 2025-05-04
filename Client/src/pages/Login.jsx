@@ -25,7 +25,7 @@ export default function Login() {
 
 const handleLogin = async ()=>{
     if(email && password ){
-      await loginUser ({email,password})
+      await RegUser ({fullName,email,password})
 
     }else{
       toast.error("please fill all imput field")
@@ -75,7 +75,7 @@ const handleLogin = async ()=>{
            </p>)
            :( <p className='text-gray-400 text-center text-xs mt-4'>
             Don't have an account?{' '}
-            <span onClick={()=>setState('Sign Up')}className='text-blue-400 cursor-pointer underline '>Sign Up</span>
+            <span onClick={()=>handleLogin('Sign Up')}className='text-blue-400 cursor-pointer underline '>Sign Up</span>
           </p>)}
          
         </div>
