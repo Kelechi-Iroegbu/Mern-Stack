@@ -71,7 +71,7 @@ const handleLogin = async ()=>{
           {state== 'Sign Up' ? (
              <p className='text-gray-400 text-center text-xs mt-4'>
              Already have an account?{' '}
-             <span onClick={()=>setState('Login')} className='text-blue-400 cursor-pointer underline '>Login here</span>
+             <span onClick={()=>handleLogin('Login')} className='text-blue-400 cursor-pointer underline '>Login here</span>
            </p>)
            :( <p className='text-gray-400 text-center text-xs mt-4'>
             Don't have an account?{' '}
