@@ -15,7 +15,7 @@ export default function Login() {
     const navigate = useNavigate();
     const[formValue,setFormValue] = useState(initialState);
     const {email,password,name} = formValue;
-    const [state,setState] = useState('Sign Up');
+    const [state,setState] = useState('false');
     const [RegUser,{data:regdata,isSuccess:isregSuccess,error:regError,isError:isregError}] = useRegUserMutation()
  
   
@@ -28,7 +28,7 @@ const handleLogin = async ()=>{
       await RegUser ({fullName,email,password})
 
     }else{
-      toast.error("please fill all imput field")
+      toast.error("please fill all input field")
     }
   }
   useEffect(()=>{
