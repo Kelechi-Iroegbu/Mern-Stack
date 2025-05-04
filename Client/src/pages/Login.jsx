@@ -26,18 +26,16 @@ export default function Login() {
 const handleLogin = async ()=>{
     if(email && password & fullname){
       await RegUser ({fullName,email,password})
-
-
+      if(isregSuccess){
+      getUserData()
+      toast.success("user login success")
+      navigate("/")}
     }else{
       toast.error("please fill all input field")
     }
   }
   useEffect(()=>{
-    if(isregSuccess){
-      getUserData()
-      toast.success("user login success")
-      navigate("/")
-    }
+    isregSuccess(true)
   },[isregSuccess]);
 
 
