@@ -35,7 +35,7 @@ const handleLogin = async ()=>{
     }
   }
   useEffect(()=>{
-    isregSuccess
+    isregSuccess(true)
   },[isregSuccess]);
 
 
@@ -71,11 +71,11 @@ const handleLogin = async ()=>{
           {state== 'Sign Up' ? (
              <p className='text-gray-400 text-center text-xs mt-4'>
              Already have an account?{' '}
-             <span onClick={()=>handleLogin('Login')} className='text-blue-400 cursor-pointer underline '>Login here</span>
+             <span onClick={()=>setState('Login')} className='text-blue-400 cursor-pointer underline '>Login here</span>
            </p>)
            :( <p className='text-gray-400 text-center text-xs mt-4'>
             Don't have an account?{' '}
-            <span onClick={()=>handleLogin('Sign Up')}className='text-blue-400 cursor-pointer underline '>Sign Up</span>
+            <span onClick={()=>setState('Sign Up')}className='text-blue-400 cursor-pointer underline '>Sign Up</span>
           </p>)}
          
         </div>
