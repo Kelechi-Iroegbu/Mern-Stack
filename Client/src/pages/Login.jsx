@@ -35,7 +35,7 @@ const handleLogin = async ()=>{
     }
   }
   useEffect(()=>{
-    isregSuccess(true)
+    isregSuccess
   },[isregSuccess]);
 
 
