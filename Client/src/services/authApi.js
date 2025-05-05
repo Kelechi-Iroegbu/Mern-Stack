@@ -12,7 +12,7 @@ export const authApi = createApi({
                 return{
                     url:"/api/auth/register",
                     method:"post",
-                    body:{fullname:string,name:string,password:string},
+                    body:({fullname:string,name:string,password:string,})
                 }
             }
         })
