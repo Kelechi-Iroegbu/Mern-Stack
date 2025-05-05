@@ -24,19 +24,24 @@ export default function Login() {
   }
 
 const handleLogin = async (e)=>{
-    if(email && password & fullname ){
-      await RegUser ({fullName,email,password})
-    }else{
-      toast.error("please fill all input field")
+  try {
+    e.preventDefault();
+    if (state ==="Sign Up"){
+      if(isregSuccess){
+        toast.success("User Logged in Successfully")
+        navigate("/")
+      }
     }
-  }
-  useEffect(()=>{
-    if(isregSuccess){
-      toast.success("user login success")
-      navigate("/") 
-    }
-  },[isregSuccess]);
+    useEffect(()=>{
 
+    },[isregSuccess])
+  } catch (error) {
+    
+  }
+
+
+
+}
 
     return (
       <div className=' flex items-center justify-center min-h-screen px-6 sm:px-0 bg-gradient-to-br from blue-200 to purple-400'>
