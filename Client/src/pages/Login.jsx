@@ -10,7 +10,7 @@ const initialState ={
   email:"",
   password:"",
 }
-
+console.log(RegUser)
 export default function Login() {
     const navigate = useNavigate();
     const[formValue,setFormValue] = useState(initialState);
@@ -26,10 +26,6 @@ export default function Login() {
 const handleLogin = async (e)=>{
   try {
     e.preventDefault();
-    if (state ==="Sign Up"){
-      if(name&&password&&email){
-        await RegUser({email,password,name})
-        getUserData()
       }
     }
     useEffect(()=>{
