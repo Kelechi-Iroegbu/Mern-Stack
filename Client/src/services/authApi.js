@@ -8,11 +8,11 @@ export const authApi = createApi({
     }),
     endpoints:(builder)=>({
         RegUser:builder.mutation({
-            query : (body)=>{
+            query : body=>{
                 return{
-                    url:"/auth/register",
+                    url:"/api/auth/register",
                     method:"post",
-                    body,
+                    body:{fullname:string,name:string,password:string},
                 }
             }
         })
