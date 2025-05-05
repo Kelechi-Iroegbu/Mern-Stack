@@ -23,11 +23,12 @@ export default function Login() {
     setFormValue({...formValue,initialState:e.target.value})
   }
 
-const handleLogin = async (e)=>{
+const handleLogin = async ()=>{
   try {
     e.preventDefault();
     if (state ==="Sign Up"){
       if(isregSuccess){
+        getUserData()
         toast.success("User Logged in Successfully")
         navigate("/")
       }
@@ -79,7 +80,7 @@ const handleLogin = async (e)=>{
            </p>)
            :( <p className='text-gray-400 text-center text-xs mt-4'>
             Don't have an account?{' '}
-            <span onClick={()=>handleLogin('Sign Up')}className='text-blue-400 cursor-pointer underline '>Sign Up</span>
+            <span onClick={()=>setState('Sign Up')}className='text-blue-400 cursor-pointer underline '>Sign Up</span>
           </p>)}
          
         </div>
