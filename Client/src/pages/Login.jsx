@@ -23,14 +23,13 @@ export default function Login() {
     setFormValue({...formValue,initialState:e.target.value})
   }
 
-const handleLogin = async ()=>{
+const handleLogin = async (e)=>{
   try {
     e.preventDefault();
     if (state ==="Sign Up"){
-      if(isregSuccess){
+      if(name&&password&&email){
+        await RegUser({email,password,name})
         getUserData()
-        toast.success("User Logged in Successfully")
-        navigate("/")
       }
     }
     useEffect(()=>{
@@ -88,3 +87,4 @@ const handleLogin = async ()=>{
       </div>
     )
   }
+  
