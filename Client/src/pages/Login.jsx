@@ -23,7 +23,7 @@ export default function Login() {
     setFormValue({...formValue,initialState:e.target.value})
   }
 
-const handleLogin = async ()=>{
+const handleLogin = async (e)=>{
     if(email && password & fullname ){
       await RegUser ({fullName,email,password})
     }else{
