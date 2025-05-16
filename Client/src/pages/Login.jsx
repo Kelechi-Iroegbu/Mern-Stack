@@ -1,5 +1,5 @@
 import React,{useState}from 'react';
-import { useRegUserMutation, useLoginMutation,useGetUserDataQuery } from '../services/authApi';
+import { useRegUserMutation, useLoginMutation } from '../services/authApi';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { assets } from '../assets/assets'
@@ -12,7 +12,6 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [RegUser] = useRegUserMutation();
   const [login] = useLoginMutation();
-  //const {getUserData,data}=useGetUserDataQuery();
 
 
   const onSubmitHandler = async (e) => {
@@ -22,15 +21,14 @@ export default function Login() {
       let response;
       if (state === 'Sign Up') {
         console.log(response)
-        response = await RegUser({ name, email, password })
+        response = await RegUser({ name, email, password }).unwrap()
       } else {
-        response = await login({ email, password })
+        response = await login({ email, password }).unwrap()
       }
 
       if (response.success) {
-        setIsLoggedin(true);
-        //getUserData();
         navigate('/');
+        toast.success(response.message)
       } else {
         toast.error(response.message);
       }

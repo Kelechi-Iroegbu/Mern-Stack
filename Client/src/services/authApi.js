@@ -18,13 +18,7 @@ export const authApi = createApi({
         body,
       }),
     }),
-    getUserData: builder.query({
-      query: () => ({
-        url: '/api/user/data',
-        method: 'GET',
-      }),
-    }),
   }),
 });
 
-export const { useRegUserMutation, useLoginMutation,useGetUserDataQuery} = authApi;
+export const { useRegUserMutation, useLoginMutation } = authApi;
