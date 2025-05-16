@@ -3,7 +3,13 @@ import { useRegUserMutation, useLoginMutation } from '../services/authApi';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { assets } from '../assets/assets'
+//import{useRegUserMutation} from '../services/authApi'
 
+const initialState ={
+  fullName:"",
+  email:"",
+  password:"",
+}
 export default function Login() {
    const navigate = useNavigate();
   const [state,setState] = useState('Sign Up');
@@ -83,5 +89,3 @@ return (
   </div>
 )
 }
-
-
